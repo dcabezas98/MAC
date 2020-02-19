@@ -1,0 +1,26 @@
+; http://morphett.info/turing/turing.html
+
+; wcw (w binary string)
+
+; Machine starts at state q
+
+q 0 _ r q0
+q 1 _ r q1
+q c * * halt-accept
+
+q0 c c r q0'
+q0 0 0 r q0
+q0 1 1 r q0
+
+q1 c c r q1'
+q1 0 0 r q1
+q1 1 1 r q1
+
+q0' 0 X l qr
+q0' X X r q0'
+
+q1' 1 X l qr
+q1' X X r q1'
+
+qr _ _ r q
+qr * * l qr

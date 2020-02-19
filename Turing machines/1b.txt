@@ -1,0 +1,27 @@
+; http://morphett.info/turing/turing.html
+
+; a^n b^n c^n n>=1
+
+; Machine starts at state q0
+
+q0 a _ r qa
+
+qa a a r qa
+qa X X r qa
+qa b X r qb
+
+qb b b r qb
+qb Y Y r qb
+qb c Y l qc
+
+qc _ _ r q1
+qc * * l qc
+
+q1 a _ r qa
+q1 X _ r qX
+
+qX X _ r qX
+qX Y _ r qY
+
+qY Y _ r qY
+qY _ * * halt-accept  

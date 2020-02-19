@@ -1,0 +1,22 @@
+; http://morphett.info/turing/turing.html
+
+; ww^-1 (even-lenght binary palindrome)
+
+; Machine starts at state q
+
+q 0 _ r q0
+q 1 _ r q1
+q _ * * halt-accept
+
+q0 _ _ l q0'
+q0 * * r q0
+
+q1 _ _ l q1'
+q1 * * r q1
+
+q0' 0 _ l qr
+
+q1' 1 _ l qr
+
+qr _ _ r q
+qr * * l qr
