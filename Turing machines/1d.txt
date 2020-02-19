@@ -6,7 +6,10 @@
 
 q 0 _ r q0
 q 1 _ r q1
-q c * * halt-accept
+q c c r qc
+
+qc X _ r qc
+qc _ * * halt-accept
 
 q0 c c r q0'
 q0 0 0 r q0
